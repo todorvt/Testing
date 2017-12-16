@@ -18,7 +18,7 @@ final class Email
 
     public function __toString(): string
     {
-        return $this->email;
+        return 'Email is: '.$this->email;
     }
 
     private function ensureIsValidEmail(string $email): void
