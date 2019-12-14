@@ -20,7 +20,7 @@ final class EmailTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        Email::fromString('invalid ');
+        Email::fromString('invalid');
     }
 
     public function testCanBeUsedAsString(): void
