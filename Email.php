@@ -8,7 +8,7 @@ final class Email
     private function __construct(string $email)
     {
         $this->ensureIsValidEmail($email);
-        $this->email = $email ; 
+        $this->email = $email; 
     }
 
     public static function fromString(string $email): self
