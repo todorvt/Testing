@@ -6,6 +6,5 @@ before_script:
   - bash ci/docker_install.sh > /dev/null
 phpunit:
   stage: test
-  script:    
-    - composer install
-    - vendor/bin/phpunit --configuration phpunit.xml
+  script:
+ 
