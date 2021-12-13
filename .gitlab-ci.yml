@@ -4,7 +4,20 @@ image: php:7.3
 before_script:
   # Install dependencies
   - bash ci/docker_install.sh > /dev/null
-test:app:
+  # Install composer dependencies
+  - wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
+  - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  - php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  - php composer-setup.php
+  - php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+  - php composer.phar install
+phpunit:
+  stage: test
   script:
-    - phpunit --configuration phpunit.xml --coverage-text --log-junit Test/report.xml
+    - composer install
+    - vendor/bin/phpunit --configuration /phpunit.xml --log-junit report.xml
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
  
