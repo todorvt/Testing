@@ -9,7 +9,3 @@ phpunit:
   script:    
     - composer install
     - vendor/bin/phpunit --configuration phpunit.xml
-  artifacts:
-    when: always
-    reports:
-      junit: Tests/report.xml
