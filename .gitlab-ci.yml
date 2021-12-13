@@ -15,9 +15,9 @@ before_script:
 phpunit:
   stage: test
   script:    
-    - phpunit --configuration /phpunit.xml --log-junit report.xml
+    - phpunit --configuration /phpunit.xml --log-junit Tests/report.xml
   artifacts:
     when: always
     reports:
-      junit: report.xml
+      junit: Tests/report.xml
  
