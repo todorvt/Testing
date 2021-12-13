@@ -4,7 +4,7 @@ image: php:7.3
 before_script:
   # Install dependencies
   - bash ci/docker_install.sh > /dev/null
-phpunit:
-  stage: test
+test:app:
   script:
+    - phpunit --configuration phpunit.xml --coverage-text --log-junit report.xml
  
