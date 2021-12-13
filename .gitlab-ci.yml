@@ -1,9 +1,9 @@
-# Select image from https://hub.docker.com/_/php
-image: php:5.6
-
-before_script:
-  # Install dependencies
-  - bash ci/docker_install.sh > /dev/null
-
-test:app:
-    script: phpunit --configuration phpunit.xml --coverage-text
+phpunit:
+  stage: test
+  script:
+    - composer install
+    - vendor/bin/phpunit --configuration phpunit.xml --log-junit report.xml
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
