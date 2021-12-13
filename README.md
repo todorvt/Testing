@@ -10,7 +10,7 @@ Here is a sample status icon showing the state of the master branch:
 
 End a sample status icon showing the test coverage report:
 
-![coverage](https://gitlab.com/todorvt/gitlab/Testing/main/coverage.svg?job=coverage)
+![coverage](https://gitlab.com/todorvt/Testing/badges/main/coverage.svg?job=coverage)
 
 Every push will then trigger a new build on GitLab CI.
 
