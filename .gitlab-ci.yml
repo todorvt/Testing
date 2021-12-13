@@ -8,8 +8,8 @@ phpunit:
   stage: test
   script:
     - composer install
-    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --log-junit <testing-repo>/results/report.xml
+    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --log-junit Tests/report.xml
   artifacts:
     when: always
     reports:
-      junit: <testing-repo>/results/report.xml
+      junit: Tests/report.xml
