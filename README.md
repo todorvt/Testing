@@ -6,11 +6,11 @@ continuous integration with a PHP project.
 
 Here is a sample status icon showing the state of the master branch:
 
-[![pipeline status](https://gitlab.com/todorvt/Testing/badges/master/pipeline.svg)](https://gitlab.com/todorvt/Testing/commits/master)
+[![pipeline status](https://gitlab.com/todorvt/Testing/badges/master/pipeline.svg)](https://gitlab.com/todorvt/Testing/-/commits/master)
 
 End a sample status icon showing the test coverage report:
 
-![coverage](https://gitlab.com/todorvt/Testing/badges/main/coverage.svg?job=coverage)
+[![coverage report](https://gitlab.com/todorvt/Testing/badges/master/coverage.svg)](https://gitlab.com/todorvt/Testing/-/commits/master)
 
 Every push will then trigger a new build on GitLab CI.
 
