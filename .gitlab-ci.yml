@@ -8,7 +8,6 @@ phpunit:
   stage: test
   script:
     - composer install
-    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text 
   artifacts:
     when: always
     reports:
