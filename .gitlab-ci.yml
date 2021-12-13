@@ -7,7 +7,8 @@ before_script:
 phpunit:
   stage: test
   script:    
-    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text
+    - composer install
+    - vendor/bin/phpunit --configuration /phpunit.xml --coverage-text 
   artifacts:
     when: always
     reports:
