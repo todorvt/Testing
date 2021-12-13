@@ -2,7 +2,7 @@ phpunit:
   stage: test
   script:
     - composer install
-    - vendor/bin/phpunit --configuration phpunit.xml --log-junit report.xml
+    - vendor/bin/phpunit --configuration phpunit.xml --covarage-text
   artifacts:
     when: always
     reports:
