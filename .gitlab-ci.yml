@@ -6,8 +6,8 @@ before_script:
   - bash ci/docker_install.sh > /dev/null
 phpunit:
   stage: test
-  script:
-    - composer install
+  script:    
+    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text
   artifacts:
     when: always
     reports:
