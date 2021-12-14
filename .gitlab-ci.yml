@@ -10,7 +10,7 @@ before_script:
 phpunit:
   stage: test
   script:    
-    - phpunit --configuration phpunit.xml --log-junit Tests/report.xml --coverage-text --colors=never
+    - phpunit xdebug.mode=coverage --configuration phpunit.xml --log-junit Tests/report.xml --coverage-text --colors=never
   coverage: '/^\s*Lines:\s*\d+.\d+\%/'
   artifacts:
     when: always
