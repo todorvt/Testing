@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <phpunit bootstrap="Tests/bootstrap.php" colors="true">
-   
+   <coverage processUncoveredFiles="true">
+    <report>
+      <clover outputFile="phpunit.coverage.xml"/>
+    </report>
+  </coverage>
     <testsuites>
         <testsuite name="Mail Validaion Test Suite">
             <directory>./Tests/</directory>
