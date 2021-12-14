@@ -8,7 +8,6 @@ phpunit:
   stage: test
   script:    
     - phpunit --configuration phpunit.xml --log-junit Tests/report.xml
-    - cat Tests/report.xml | grep -o 'Total[^%]*%'
   artifacts:
     when: always
     reports:
