@@ -1,13 +1,1 @@
-machine:
-  php:
-    version: 7.1.0
-dependencies:
-  override:
-    - yarn
-    - composer install --no-interaction
-  cache_directories:
-    - ~/.cache/yarn
 
-test:
-  override:
-    - vendor/bin/phpunit
