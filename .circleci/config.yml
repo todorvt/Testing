@@ -1,1 +1,4 @@
-
+test:
+  override:
+    - phpunit
+    - vendor/bin/phpcs --standard=vendor/humanmade/coding-standards
