@@ -5,6 +5,8 @@
 version: 2
 jobs:
   test:
+    docker:
+      - image: cimg/php:8.2.12
     steps:
       - checkout
       # run tests with phpunit or codecept
