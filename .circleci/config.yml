@@ -17,9 +17,6 @@ jobs:
     steps:
       - checkout
 
-      - run: chmod -R 777 storage
-      - run: cp .env.testing.example .env
-
       # Download and cache dependencies
       # Composer
       - restore_cache:
