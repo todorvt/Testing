@@ -17,38 +17,8 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
-      # Composer
-      - restore_cache:
-          name: Restore composer cache
-          keys:
-          - composer-{{ checksum "composer.json" }}
-          - composer-
-      - run: composer install -n --prefer-dist
-      - save_cache:
-          name: Store composer cache
-          key: composer-{{ checksum "composer.json" }}
-          paths:
-            - vendor
-      # Yarn
-      - restore_cache:
-          name: Restore yarn cache
-          keys:
-            - yarn-{{ checksum "yarn.lock" }}
-            - yarn-
-      - run: yarn
-      - save_cache:
-          paths:
-            - node_modules
-          key: yarn-{{ checksum "composer.json" }}
-
-      - run: npm run production      
+      
+      - run: composer require phpunit/phpunit      
       # run tests!
-      - run:
-          command: |
-            mkdir -p /phpunit &&
-            php -dzend_extension=xdebug.so vendor/bin/phpunit --coverage-clover=phpunit/coverage-clover.xml --coverage-html=phpunit/coverage
-      - store_test_results:
-          path: /phpunit
-      - store_artifacts:
-          path: /phpunit
+      - run: vendor/bin/phpunit ./tests
+     
