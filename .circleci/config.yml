@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: cimg/php:8.2.12
+      - image: framgia/laravel-workspace
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
