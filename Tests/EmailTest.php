@@ -26,7 +26,7 @@ final class EmailTest extends TestCase
     public function testCanBeUsedAsString(): void
     {
         $this->assertEquals(
-            'Email is: user1@example.com',
+            'Email is: user@example.com',
             Email::fromString('user@example.com')
         );
     }
